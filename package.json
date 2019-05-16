@@ -1,6 +1,6 @@
 {
   "name": "@aha-app/tinymce-word-paste-filter",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "repository": {
     "type": "git",
     "url": "https://github.com/aha-app/tinymce.git"
