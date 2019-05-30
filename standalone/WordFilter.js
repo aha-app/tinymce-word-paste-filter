@@ -716,67 +716,6 @@ var tinymceWordPasteFilter = (function () {
     revokeObjectURL: revokeObjectURL
   };
 
-  var nav = navigator;
-  var userAgent = nav.userAgent;
-  var opera;
-  var webkit;
-  var ie;
-  var ie11;
-  var ie12;
-  var gecko;
-  var mac;
-  var iDevice;
-  var android;
-  var fileApi;
-  var phone;
-  var tablet;
-  var windowsPhone;
-  var matchMediaQuery = function (query) {
-    return 'matchMedia' in window ? matchMedia(query).matches : false;
-  };
-  opera = false;
-  android = /Android/.test(userAgent);
-  webkit = /WebKit/.test(userAgent);
-  ie = !webkit && !opera && /MSIE/gi.test(userAgent) && /Explorer/gi.test(nav.appName);
-  ie = ie && /MSIE (\w+)\./.exec(userAgent)[1];
-  ie11 = userAgent.indexOf('Trident/') !== -1 && (userAgent.indexOf('rv:') !== -1 || nav.appName.indexOf('Netscape') !== -1) ? 11 : false;
-  ie12 = userAgent.indexOf('Edge/') !== -1 && !ie && !ie11 ? 12 : false;
-  ie = ie || ie11 || ie12;
-  gecko = !webkit && !ie11 && /Gecko/.test(userAgent);
-  mac = userAgent.indexOf('Mac') !== -1;
-  iDevice = /(iPad|iPhone)/.test(userAgent);
-  fileApi = 'FormData' in window && 'FileReader' in window && 'URL' in window && !!$_6syw5dajcut35im.createObjectURL;
-  phone = matchMediaQuery('only screen and (max-device-width: 480px)') && (android || iDevice);
-  tablet = matchMediaQuery('only screen and (min-width: 800px)') && (android || iDevice);
-  windowsPhone = userAgent.indexOf('Windows Phone') !== -1;
-  if (ie12) {
-    webkit = false;
-  }
-  var contentEditable = !iDevice || fileApi || parseInt(userAgent.match(/AppleWebKit\/(\d*)/)[1], 10) >= 534;
-  var $_3q7g989jcut35id = {
-    opera: opera,
-    webkit: webkit,
-    ie: ie,
-    gecko: gecko,
-    mac: mac,
-    iOS: iDevice,
-    android: android,
-    contentEditable: contentEditable,
-    transparentSrc: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
-    caretAfter: ie !== 8,
-    range: window.getSelection && 'Range' in window,
-    documentMode: ie && !ie12 ? document.documentMode || 7 : 10,
-    fileApi: fileApi,
-    ceFalse: ie === false || ie > 8,
-    cacheSuffix: '',
-    container: null,
-    overrideViewPort: null,
-    experimentalShadowDom: false,
-    canHaveCSP: ie === false || ie > 11,
-    desktop: !phone && !tablet,
-    windowsPhone: windowsPhone
-  };
-
   var isArray = Array.isArray || function (obj) {
     return Object.prototype.toString.call(obj) === '[object Array]';
   };
@@ -1037,11 +976,7 @@ var tinymceWordPasteFilter = (function () {
     return $_cafknoejcut35j1.map(s.split(d || ','), trim);
   };
   var _addCacheSuffix = function (url) {
-    var cacheSuffix = $_3q7g989jcut35id.cacheSuffix;
-    if (cacheSuffix) {
-      url += (url.indexOf('?') === -1 ? '?' : '&') + cacheSuffix;
-    }
-    return url;
+     return url;
   };
   var $_dat2f28jcut35i4 = {
     trim: trim,
