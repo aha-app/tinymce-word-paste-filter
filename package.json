@@ -1,9 +1,9 @@
 {
-  "name": "tinymce-word-paste-filter",
-  "version": "0.6.1",
+  "name": "@aha-app/tinymce-word-paste-filter",
+  "version": "0.6.4",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jasonphillips/tinymce.git"
+    "url": "https://github.com/aha-app/tinymce.git"
   },
   "description": "Standalone filter for pasted MS Word HTML content; forked from TinyMCE",
   "author": "Jason Phillips",

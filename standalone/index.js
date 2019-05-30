@@ -1,5 +1,5 @@
-const WordFilter = require('./WordFilter.js');
-const Styles = require('./Styles.js');
+const WordFilter = require("./WordFilter.js");
+const Styles = require("./Styles.js");
 
 StylesTool = Styles();
 
